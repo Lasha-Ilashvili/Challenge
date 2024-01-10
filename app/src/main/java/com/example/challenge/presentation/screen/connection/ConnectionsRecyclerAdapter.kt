@@ -5,8 +5,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.example.challenge.R
 import com.example.challenge.databinding.ItemConnectionLayoutBinding
 import com.example.challenge.presentation.extension.loadImage
 import com.example.challenge.presentation.model.connection.Connection
@@ -35,7 +33,6 @@ class ConnectionsRecyclerAdapter :
             binding.apply {
                 imvProfile.loadImage(model.avatar)
                 tvFullName.text = model.fullName
-                Thread.sleep(1000000)
             }
         }
     }

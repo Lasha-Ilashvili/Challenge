@@ -19,7 +19,6 @@ abstract class BaseFragment<VB : ViewBinding>(private val inflate: Inflater<VB>)
         savedInstanceState: Bundle?
     ): View? {
         _binding = inflate.invoke(inflater, container, false)
-//        Thread.sleep(1000000)
         return binding.root
     }
 

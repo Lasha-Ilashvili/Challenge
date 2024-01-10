@@ -20,10 +20,3 @@ class HandleResponse() {
         emit(Resource.Loading(loading = false))
     }
 }
-
-
-
-
-open class Application{
-
-}

@@ -21,8 +21,8 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DataStoreModule {
 
-    @Provides
     @Singleton
+    @Provides
     fun provideDataSore(@ApplicationContext context: Context): DataStore<Preferences> {
         return PreferenceDataStoreFactory.create(
             corruptionHandler = ReplaceFileCorruptionHandler(
@@ -33,8 +33,8 @@ object DataStoreModule {
             produceFile = { context.preferencesDataStoreFile("settings") })
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideAuthToken(dataStore: DataStore<Preferences>): Flow<String?> {
         return dataStore.data
             .map { preferences ->

@@ -6,9 +6,7 @@ import com.example.challenge.data.common.Resource
 import com.example.challenge.domain.usecase.connection.GetConnectionsUseCase
 import com.example.challenge.domain.usecase.datastore.ClearDataStoreUseCase
 import com.example.challenge.presentation.event.conection.ConnectionEvent
-import com.example.challenge.presentation.event.log_in.LogInEvent
 import com.example.challenge.presentation.mapper.connection.toPresenter
-import com.example.challenge.presentation.screen.log_in.LogInViewModel
 import com.example.challenge.presentation.state.connection.ConnectionState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -60,7 +58,7 @@ class ConnectionsViewModel @Inject constructor(
         }
     }
 
-    private fun logOut(){
+    private fun logOut() {
         viewModelScope.launch {
             clearDataStoreUseCase()
             _uiEvent.emit(ConnectionUiEvent.NavigateToLogIn)
@@ -72,6 +70,6 @@ class ConnectionsViewModel @Inject constructor(
     }
 
     sealed interface ConnectionUiEvent {
-        object NavigateToLogIn : ConnectionUiEvent
+        data object NavigateToLogIn : ConnectionUiEvent
     }
 }

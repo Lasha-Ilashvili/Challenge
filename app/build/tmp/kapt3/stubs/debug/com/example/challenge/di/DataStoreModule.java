@@ -11,8 +11,8 @@ public final class DataStoreModule {
         super();
     }
     
-    @dagger.Provides
     @javax.inject.Singleton
+    @dagger.Provides
     @org.jetbrains.annotations.NotNull
     public final androidx.datastore.core.DataStore<androidx.datastore.preferences.core.Preferences> provideDataSore(@dagger.hilt.android.qualifiers.ApplicationContext
     @org.jetbrains.annotations.NotNull
@@ -20,8 +20,8 @@ public final class DataStoreModule {
         return null;
     }
     
-    @dagger.Provides
     @javax.inject.Singleton
+    @dagger.Provides
     @org.jetbrains.annotations.NotNull
     public final kotlinx.coroutines.flow.Flow<java.lang.String> provideAuthToken(@org.jetbrains.annotations.NotNull
     androidx.datastore.core.DataStore<androidx.datastore.preferences.core.Preferences> dataStore) {

@@ -18,7 +18,6 @@ import dagger.hilt.internal.GeneratedComponentManagerHolder;
 import dagger.hilt.internal.Preconditions;
 import dagger.hilt.internal.UnsafeCasts;
 import java.lang.Boolean;
-import java.lang.Integer;
 import java.lang.Object;
 import java.lang.Override;
 import java.lang.SuppressWarnings;
@@ -39,7 +38,7 @@ public abstract class Hilt_LogInFragment<VB extends ViewBinding> extends BaseFra
   private boolean injected = false;
 
   Hilt_LogInFragment(
-      Function3<? super Integer, ? super ViewGroup, ? super Boolean, ? extends VB> inflate) {
+      Function3<? super LayoutInflater, ? super ViewGroup, ? super Boolean, ? extends VB> inflate) {
     super(inflate);
   }
 

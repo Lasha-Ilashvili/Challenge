@@ -2,6 +2,7 @@ package com.example.challenge.di
 
 import com.example.challenge.data.common.HandleResponse
 import com.example.challenge.data.service.connection.ConnectionsService
+import com.example.challenge.data.service.log_in.LogInService
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import dagger.Module
@@ -22,8 +23,8 @@ import javax.inject.Singleton
 object AppModule {
     private const val BASE_URL = "https://run.mocky.io/v3/"
 
-    @Provides
     @Singleton
+    @Provides
     fun provideOkHttpClient(
         authTokenFlow: Flow<String?>, loggingInterceptor: HttpLoggingInterceptor
     ): OkHttpClient {
@@ -45,8 +46,8 @@ object AppModule {
         return clientBuilder.build()
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideLoggingInterceptor(): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
             level = HttpLoggingInterceptor.Level.BODY
@@ -78,5 +79,11 @@ object AppModule {
     @Provides
     fun provideConnectionsService(retrofit: Retrofit): ConnectionsService {
         return retrofit.create(ConnectionsService::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun provideLogInService(retrofit: Retrofit): LogInService {
+        return retrofit.create(LogInService::class.java)
     }
 }

@@ -4,10 +4,6 @@
         "source": "C:\\Users\\ilash\\.gradle\\daemon\\8.2\\com.example.challenge.app-main-52:\\layout\\fragment_log_in.xml"
     },
     {
-        "merged": "com.example.challenge.app-merged_res-50:/layout_fragment_connections.xml.flat",
-        "source": "com.example.challenge.app-main-52:/layout/fragment_connections.xml"
-    },
-    {
         "merged": "C:\\Users\\ilash\\.gradle\\daemon\\8.2\\com.example.challenge.app-merged_res-50:\\layout_fragment_connections.xml.flat",
         "source": "C:\\Users\\ilash\\.gradle\\daemon\\8.2\\com.example.challenge.app-main-52:\\layout\\fragment_connections.xml"
     },
@@ -26,6 +22,10 @@
     {
         "merged": "C:\\Users\\ilash\\.gradle\\daemon\\8.2\\com.example.challenge.app-merged_res-50:\\mipmap-mdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\ilash\\.gradle\\daemon\\8.2\\com.example.challenge.app-main-52:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "com.example.challenge.app-merged_res-50:/navigation_nav_graph.xml.flat",
+        "source": "com.example.challenge.app-main-52:/navigation/nav_graph.xml"
     },
     {
         "merged": "C:\\Users\\ilash\\.gradle\\daemon\\8.2\\com.example.challenge.app-merged_res-50:\\mipmap-xxxhdpi_ic_launcher.webp.flat",

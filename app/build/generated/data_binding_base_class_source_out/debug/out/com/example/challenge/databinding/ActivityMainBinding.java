@@ -6,23 +6,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.fragment.app.FragmentContainerView;
 import androidx.viewbinding.ViewBinding;
-import androidx.viewbinding.ViewBindings;
 import com.example.challenge.R;
 import java.lang.NullPointerException;
 import java.lang.Override;
-import java.lang.String;
 
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
-  private final LinearLayoutCompat rootView;
+  private final FragmentContainerView rootView;
 
   @NonNull
   public final FragmentContainerView navHostFragment;
 
-  private ActivityMainBinding(@NonNull LinearLayoutCompat rootView,
+  private ActivityMainBinding(@NonNull FragmentContainerView rootView,
       @NonNull FragmentContainerView navHostFragment) {
     this.rootView = rootView;
     this.navHostFragment = navHostFragment;
@@ -30,7 +27,7 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @Override
   @NonNull
-  public LinearLayoutCompat getRoot() {
+  public FragmentContainerView getRoot() {
     return rootView;
   }
 
@@ -51,19 +48,12 @@ public final class ActivityMainBinding implements ViewBinding {
 
   @NonNull
   public static ActivityMainBinding bind(@NonNull View rootView) {
-    // The body of this method is generated in a way you would not otherwise write.
-    // This is done to optimize the compiled bytecode for size and performance.
-    int id;
-    missingId: {
-      id = R.id.nav_host_fragment;
-      FragmentContainerView navHostFragment = ViewBindings.findChildViewById(rootView, id);
-      if (navHostFragment == null) {
-        break missingId;
-      }
-
-      return new ActivityMainBinding((LinearLayoutCompat) rootView, navHostFragment);
+    if (rootView == null) {
+      throw new NullPointerException("rootView");
     }
-    String missingId = rootView.getResources().getResourceName(id);
-    throw new NullPointerException("Missing required view with ID: ".concat(missingId));
+
+    FragmentContainerView navHostFragment = (FragmentContainerView) rootView;
+
+    return new ActivityMainBinding((FragmentContainerView) rootView, navHostFragment);
   }
 }

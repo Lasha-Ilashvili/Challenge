@@ -20,8 +20,8 @@ public final class RepositoryModule {
         return null;
     }
     
-    @dagger.Provides
     @javax.inject.Singleton
+    @dagger.Provides
     @org.jetbrains.annotations.NotNull
     public final com.example.challenge.domain.repository.datastore.DataStoreRepository provideDataStoreRepository(@org.jetbrains.annotations.NotNull
     androidx.datastore.core.DataStore<androidx.datastore.preferences.core.Preferences> dataStore) {

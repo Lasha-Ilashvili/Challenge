@@ -6,8 +6,8 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.fragment.findNavController
-import com.example.challenge.presentation.base.BaseFragment
 import com.example.challenge.databinding.FragmentLogInBinding
+import com.example.challenge.presentation.base.BaseFragment
 import com.example.challenge.presentation.event.log_in.LogInEvent
 import com.example.challenge.presentation.extension.showSnackBar
 import com.example.challenge.presentation.state.log_in.LogInState

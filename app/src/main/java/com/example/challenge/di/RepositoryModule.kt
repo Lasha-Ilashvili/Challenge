@@ -30,8 +30,8 @@ object RepositoryModule {
         return LogInRepositoryImpl(logInService = logInService, handleResponse = handleResponse)
     }
 
-    @Provides
     @Singleton
+    @Provides
     fun provideDataStoreRepository(dataStore: DataStore<Preferences>): DataStoreRepository {
         return DataStoreRepositoryImpl(dataStore = dataStore)
     }
